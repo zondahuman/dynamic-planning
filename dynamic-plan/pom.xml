@@ -12,4 +12,19 @@
     <artifactId>dynamic-plan</artifactId>
 
 
+
+
+    <dependencies>
+        <dependency>
+            <artifactId>dynamic-common</artifactId>
+            <groupId>com.abin.lee</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
+
+
+
+
 </project>
