@@ -7,5 +7,5 @@ package com.abin.lee.dynamic.plan.graph.matrix;
  */
 public class MatrixTest {
 
-    
+
 }
