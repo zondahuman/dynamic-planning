@@ -467,18 +467,15 @@ public class ListUDG {
     public void dijkstra(int vs, int[] prev, int[] dist) {
         // flag[i]=true表示"顶点vs"到"顶点i"的最短路径已成功获取。
         boolean[] flag = new boolean[mVexs.length];
-
         // 初始化
         for (int i = 0; i < mVexs.length; i++) {
             flag[i] = false;            // 顶点i的最短路径还没获取到。
             prev[i] = 0;                // 顶点i的前驱顶点为0。
             dist[i] = getWeight(vs, i); // 顶点i的最短路径为"顶点vs"到"顶点i"的权。
         }
-
         // 对"顶点vs"自身进行初始化
         flag[vs] = true;
         dist[vs] = 0;
-
         // 遍历mVexs.length-1次；每次找出一个顶点的最短路径。
         int k = 0;
         for (int i = 1; i < mVexs.length; i++) {
@@ -493,7 +490,6 @@ public class ListUDG {
             }
             // 标记"顶点k"为已经获取到最短路径
             flag[k] = true;
-
             // 修正当前最短路径和前驱顶点
             // 即，当已经"顶点k的最短路径"之后，更新"未获取最短路径的顶点的最短路径和前驱顶点"。
             for (int j = 0; j < mVexs.length; j++) {
@@ -505,7 +501,6 @@ public class ListUDG {
                 }
             }
         }
-
         // 打印dijkstra最短路径的结果
         System.out.printf("dijkstra(%c): \n", mVexs[vs].data);
         for (int i = 0; i < mVexs.length; i++)
