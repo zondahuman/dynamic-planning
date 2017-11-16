@@ -22,7 +22,14 @@ public class Dijkstra {
         for (int i = 0; i < shortPath.length; i++) {
             System.out.println("从" + start + "出发到" + i + "的最短距离为：" + shortPath[i]);
         }
-        int shortestPath = shortest(weight, start);
+        int[][] weight1 = {
+                {0, 3, 2000, 7, MAX},
+                {3, 0, 4, 2, MAX},
+                {MAX, 4, 0, 5, 4},
+                {7, 2, 5, 0, 6},
+                {MAX, MAX, 4, 6, 0}
+        };
+        int shortestPath = shortest(weight1, start);
         System.out.println("shortestPath=" + shortestPath);
 
     }
