@@ -22,6 +22,9 @@ public class Dijkstra {
         for (int i = 0; i < shortPath.length; i++) {
             System.out.println("从" + start + "出发到" + i + "的最短距离为：" + shortPath[i]);
         }
+        int shortestPath = shortest(weight, start);
+        System.out.println("shortestPath=" + shortestPath);
+
     }
 
     //接受一个有向图的权重矩阵，和一个起点编号start（从0编号，顶点存在数组中）
@@ -52,7 +55,7 @@ public class Dijkstra {
             //将新选出的顶点标记为已求出最短路径，且到start的最短路径就是dmin
             shortPath[k] = dmin;
             visited[k] = 1;
-            //以k为中间点，修正从start到未访问各点的距离
+            //以k为中间点，修正从start到未访问各点的距离   //判断是直接v[0]连接v[j]短，还是经过v[k]连接v[j]更短
             for (int i = 0; i < length; i++) {
                 if (visited[i] == 0 && weight[start][k] + weight[k][i] < weight[start][i]) {
                     weight[start][i] = weight[start][k] + weight[k][i];
@@ -66,4 +69,39 @@ public class Dijkstra {
         System.out.println("=====================================");
         return shortPath;
     }
+
+
+
+    //接受一个有向图的权重矩阵，和一个起点编号start（从0编号，顶点存在数组中）
+    //返回一个int[] 数组，表示从start到它的最短路径长度
+    public static int shortest(int[][] weight, int start) {
+        int length = weight.length;
+        //标记当前该顶点的最短路径是否已经求出,1表示已求出
+        int[] visited = new int[length];
+        visited[start] = 1;
+        for (int count = 1; count <= length - 1; count++) {
+            //选出一个距离初始顶点start最近的未标记顶点
+            int k = -1;
+            int dmin = Integer.MAX_VALUE;
+            for (int i = 0; i < length; i++) {
+                if (visited[i] == 0 && weight[start][i] < dmin) {
+                    dmin = weight[start][i];
+                    k = i;
+                }
+            }
+            //将新选出的顶点标记为已求出最短路径，且到start的最短路径就是dmin
+            visited[k] = 1;
+            //以k为中间点，修正从start到未访问各点的距离   //判断是直接v[0]连接v[j]短，还是经过v[k]连接v[j]更短
+            for (int i = 0; i < length; i++) {
+                if (visited[i] == 0 && dmin + weight[k][i] < weight[start][i]) {
+                    weight[start][i] = dmin + weight[k][i];
+                    return weight[start][i];
+                }
+            }
+        }
+
+        return -1;
+    }
+
+
 }
