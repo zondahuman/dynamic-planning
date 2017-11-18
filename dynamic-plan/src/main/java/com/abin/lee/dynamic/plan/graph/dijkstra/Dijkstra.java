@@ -1,5 +1,7 @@
 package com.abin.lee.dynamic.plan.graph.dijkstra;
 
+import com.abin.lee.dynamic.common.JsonUtil;
+
 /**
  * Created by abin on 2017/11/14 2017/11/14.
  * dynamic-planning
@@ -29,8 +31,8 @@ public class Dijkstra {
                 {7, 2, 5, 0, 6},
                 {MAX, MAX, 4, 6, 0}
         };
-        int shortestPath = shortest(weight1, start);
-        System.out.println("shortestPath=" + shortestPath);
+        int[] shortestPath = shortest(weight1, start);
+        System.out.println("shortestPath=" + JsonUtil.toJson(shortestPath));
 
     }
 
@@ -81,8 +83,11 @@ public class Dijkstra {
 
     //接受一个有向图的权重矩阵，和一个起点编号start（从0编号，顶点存在数组中）
     //返回一个int[] 数组，表示从start到它的最短路径长度
-    public static int shortest(int[][] weight, int start) {
+    public static int[] shortest(int[][] weight, int start) {
         int length = weight.length;
+        //存放从start到其他各点的最短路径
+        int[] shortPath = new int[length];
+        shortPath[start] = 0;
         //标记当前该顶点的最短路径是否已经求出,1表示已求出
         int[] visited = new int[length];
         visited[start] = 1;
@@ -97,17 +102,17 @@ public class Dijkstra {
                 }
             }
             //将新选出的顶点标记为已求出最短路径，且到start的最短路径就是dmin
+            shortPath[k] = dmin;
             visited[k] = 1;
             //以k为中间点，修正从start到未访问各点的距离   //判断是直接v[0]连接v[j]短，还是经过v[k]连接v[j]更短
             for (int i = 0; i < length; i++) {
                 if (visited[i] == 0 && dmin + weight[k][i] < weight[start][i]) {
                     weight[start][i] = dmin + weight[k][i];
-                    return weight[start][i];
                 }
             }
         }
 
-        return -1;
+        return shortPath;
     }
 
 
