@@ -4,6 +4,7 @@ package com.abin.lee.dynamic.plan.basic.strand;
  * Created by abin on 2017/11/20 2017/11/20.
  * dynamic-planning
  * com.abin.lee.dynamic.plan.basic.strand
+ * 剑指offer: https://www.nowcoder.com/ta/coding-interviews?page=1
  */
 public class DynamicString {
     public static void main(String[] args) {
