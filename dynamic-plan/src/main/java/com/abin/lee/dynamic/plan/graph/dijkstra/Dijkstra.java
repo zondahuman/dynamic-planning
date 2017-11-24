@@ -6,6 +6,7 @@ import com.abin.lee.dynamic.common.JsonUtil;
  * Created by abin on 2017/11/14 2017/11/14.
  * dynamic-planning
  * com.abin.lee.dynamic.plan.graph.dijkstra
+ * https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html
  */
 public class Dijkstra {
     public static int MAX = 10000;
@@ -78,7 +79,11 @@ public class Dijkstra {
         System.out.println("=====================================");
         return shortPath;
     }
-
+    //{0, 3, 2000, 7, MAX},
+    //{3, 0, 4, 2, MAX},
+    //{MAX, 4, 0, 5, 4},
+    //{7, 2, 5, 0, 6},
+    //{MAX, MAX, 4, 6, 0}
 
 
     //接受一个有向图的权重矩阵，和一个起点编号start（从0编号，顶点存在数组中）
