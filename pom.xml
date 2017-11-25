@@ -11,6 +11,7 @@
     <modules>
         <module>dynamic-common</module>
         <module>dynamic-plan</module>
+        <module>dynamic-greedy</module>
     </modules>
 
     <packaging>pom</packaging>
