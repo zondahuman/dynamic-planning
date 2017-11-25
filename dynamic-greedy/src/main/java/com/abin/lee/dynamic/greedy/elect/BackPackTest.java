@@ -14,7 +14,7 @@ public class BackPackTest {
         int p[] = {4, 5, 6};
         int c[][] = pack(m, n, w, p);
 //        System.out.printf("c[][] = "+ JsonUtil.toJson(c));
-        for (int i = 1; i < n; i++) {
+         for (int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++) {
                 System.out.print(c[i][j] + "\t");
                 if (j == m-1) {
