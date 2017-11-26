@@ -16,10 +16,10 @@ public class BackPackTest {
         int p[] = {4, 5, 6};
         int c[][] = pack(m, n, w, p);
 //        System.out.printf("c[][] = "+ JsonUtil.toJson(c));
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < m; j++) {
+        for (int i = 1; i <=n; i++) {
+            for (int j = 1; j <=m; j++) {
                 System.out.print(c[i][j] + "\t");
-                if (j == m-1) {
+                if (j == m) {
                     System.out.println();
                 }
             }
@@ -36,15 +36,15 @@ public class BackPackTest {
      */
     public static int[][] pack(int m, int n, int[] w, int[] p){
         //前n个物件放入了承重为m的背包所能得到的最大价值
-        int[][] maxValue = new int[n][m];
-        for (int i = 1; i <n ; i++)
+        int[][] maxValue = new int[n+1][m+1];
+        for (int i = 1; i <=n ; i++)
             maxValue[i][0] = 0;
-        for (int i = 1; i <m ; i++)
+        for (int i = 1; i <=m ; i++)
             maxValue[0][i] = 0;
-        for (int i = 1; i <n ; i++) {
-            for (int j = 1; j <m ; j++) {
-                if(w[i] < j){
-                        maxValue[i][j] = Math.max(maxValue[i-1][j-w[i]]+p[i], maxValue[i-1][j]);
+        for (int i = 1; i <=n ; i++) {
+            for (int j = 1; j <=m ; j++) {
+                if(w[i-1] <= j){
+                        maxValue[i][j] = Math.max(maxValue[i-1][j-w[i-1]]+p[i-1], maxValue[i-1][j]);
                 }else{
                     maxValue[i][j] = maxValue[i-1][j];
                 }
