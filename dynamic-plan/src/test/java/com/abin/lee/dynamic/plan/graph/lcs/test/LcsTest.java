@@ -24,8 +24,10 @@ public class LcsTest {
     }
 
     public static void main(String[] args) {
-        String str1 = "BDCABA";
-        String str2 = "ABCBDAB";
+//        String str1 = "BDCABA";
+//        String str2 = "ABCBDAB";
+        String str1 = "abcdefghab";
+        String str2 = "cdefghijk";
 //        String str1 = "";
 //        String str2 = "";
         int result = lcs(str1, str2);
