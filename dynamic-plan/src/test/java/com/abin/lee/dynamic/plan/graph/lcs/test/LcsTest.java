@@ -6,9 +6,15 @@ package com.abin.lee.dynamic.plan.graph.lcs.test;
  * com.abin.lee.dynamic.plan.graph.lcs.test
  * https://leetcode.com/problems/delete-operation-for-two-strings/discuss/
  * https://www.cnblogs.com/hapjin/p/5572483.html
+ *
  */
 public class LcsTest {
-
+    /**
+     * 求解两个字符串的最长公共子序列(不连续最长公共子串)
+     * @param param1
+     * @param param2
+     * @return
+     */
     public static int lcs(String param1, String param2) {
         int[][] dp = new int[param1.length() + 1][param2.length() + 1];
         for (int i = 0; i <= param1.length(); i++)
