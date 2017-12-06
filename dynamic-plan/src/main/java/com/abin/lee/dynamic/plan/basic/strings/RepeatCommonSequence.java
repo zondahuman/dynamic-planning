@@ -32,6 +32,6 @@ public class RepeatCommonSequence {
         return ans;
     }
 
-    
+
 
 }
