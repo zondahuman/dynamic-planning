@@ -16,8 +16,8 @@ import java.util.Set;
 public class RepeatCommonSequence {
 
     public static void main(String[] args) {
-//        String param = "abcdaef";
-        String param = "dvdf";
+        String param = "abcdaef";
+//        String param = "dvdf";
         int result = lengthOfLongestSubstring(param);
         System.out.println("result="+result);
         int result2 = longestNoDuplicateSubstring(param);
