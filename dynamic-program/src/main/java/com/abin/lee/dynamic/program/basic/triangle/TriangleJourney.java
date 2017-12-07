@@ -8,7 +8,17 @@ package com.abin.lee.dynamic.program.basic.triangle;
  * https://leetcode.com/problems/triangle/description/
  */
 public class TriangleJourney {
-
+    /**
+     * 比如，给出下列数字三角形：
+     [
+     [2],
+     [3,4],
+     [6,5,7],
+     [4,1,8,3]
+     ]
+     从顶到底部的最小路径和为11 ( 2 + 3 + 5 + 1 = 11)。
+     * @param args
+     */
     public static void main(String[] args) {
         int[][] triangle = {
                 {2,0,0,0},
