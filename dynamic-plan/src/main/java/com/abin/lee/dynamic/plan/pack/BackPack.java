@@ -4,6 +4,7 @@ package com.abin.lee.dynamic.plan.pack;
  * Created by abin on 2017/11/20 11:59.
  * dynamic-planning
  * com.abin.lee.dynamic.plan.pack
+ * 01背包问题
  * https://www.cnblogs.com/lfeng1205/p/5981198.html
  */
 public class BackPack {
