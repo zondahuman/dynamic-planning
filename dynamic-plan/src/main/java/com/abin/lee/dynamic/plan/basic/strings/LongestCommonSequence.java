@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
  * com.abin.lee.dynamic.plan.basic.strings
  * 求解两个字符串的最长公共子序列
  * https://www.cnblogs.com/hapjin/p/5572483.html
+ * https://www.ojcoder.cn/LintCode/79-longest-common-substring/index.php?slang=java
  */
 public class LongestCommonSequence {
 
