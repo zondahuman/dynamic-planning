@@ -48,4 +48,17 @@ public class ClimbStairs {
         return tmp;
     }
 
+    public static int climbStairsDp(int n){
+        if (n == 1) {
+            return 1;
+        }
+        int[] cb = new int[n+1];
+        cb[1] = 1;
+        cb[2] = 2;
+        for (int i = 3; i <=n ; i++) {
+            cb[i] = cb[i-1] + cb[i-2];
+        }
+        return cb[n];
+    }
+
 }
