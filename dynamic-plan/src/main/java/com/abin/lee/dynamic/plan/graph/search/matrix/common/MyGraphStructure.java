@@ -1,4 +1,4 @@
-package com.abin.lee.dynamic.plan.graph.search.common;
+package com.abin.lee.dynamic.plan.graph.search.matrix.common;
 
 import java.util.ArrayList;
 import java.util.List;

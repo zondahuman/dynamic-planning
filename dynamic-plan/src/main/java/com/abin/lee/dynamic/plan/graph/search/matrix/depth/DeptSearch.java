@@ -1,4 +1,4 @@
-package com.abin.lee.dynamic.plan.graph.search.one;
+package com.abin.lee.dynamic.plan.graph.search.matrix.depth;
 
 import java.util.*;
 

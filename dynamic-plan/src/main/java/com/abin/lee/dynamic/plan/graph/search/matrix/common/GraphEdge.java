@@ -1,4 +1,4 @@
-package com.abin.lee.dynamic.plan.graph.search.common;
+package com.abin.lee.dynamic.plan.graph.search.matrix.common;
 
 /**
  * Created by abin on 2017/11/13 17:35.

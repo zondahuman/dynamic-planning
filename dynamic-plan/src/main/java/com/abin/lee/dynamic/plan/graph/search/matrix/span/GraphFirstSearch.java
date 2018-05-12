@@ -1,4 +1,4 @@
-package com.abin.lee.dynamic.plan.graph.search.two;
+package com.abin.lee.dynamic.plan.graph.search.matrix.span;
 
 
 import java.util.LinkedList;
@@ -10,7 +10,7 @@ import java.util.Queue;
  *基于邻接矩阵实现的深度和广度遍历
  *
  */
-public class Graph {
+public class GraphFirstSearch {
     final static int INF = 100000;
     final int max = 100;
     int[] vexs = new int[max]; //存放顶点的数组
@@ -19,7 +19,7 @@ public class Graph {
     /*
      * 创建邻接矩阵
      */
-    public void createGraph(Graph graph ,int[][] A,int[] vs) {
+    public void createGraph(GraphFirstSearch graph , int[][] A, int[] vs) {
         vexs = vs;
         for(int i=0;i<A.length;i++) {
             for(int j=0;j<A.length;j++) {
@@ -32,7 +32,7 @@ public class Graph {
     /*
      * 输出邻接矩阵
      */
-    public void print_Graph(Graph graph) {
+    public void print_Graph(GraphFirstSearch graph) {
         for(int i=0;i<graph.vexs.length;i++) {
             for(int j=0;j<graph.vexs.length;j++) {
                 if (graph.edges[i][j] == INF) {
@@ -52,7 +52,7 @@ public class Graph {
      * @param v
      * @return
      */
-    public int getFirst(Graph graph, int v) {
+    public int getFirst(GraphFirstSearch graph, int v) {
         for(int i=0;i<graph.vexs.length;i++) {
             if (graph.edges[v][i]==1) {
                 return i;
@@ -68,7 +68,7 @@ public class Graph {
      * @param k
      * @return
      */
-    public int getNext(Graph graph ,int v,int k) {
+    public int getNext(GraphFirstSearch graph , int v, int k) {
         for(int i=k+1;i<graph.vexs.length;i++) {
             if (graph.edges[v][i] == 1) {
                 return i;
@@ -81,7 +81,7 @@ public class Graph {
     /*
      * 深度遍历
      */
-    public void DFS(Graph graph ,int v,int[] visited) {
+    public void DFS(GraphFirstSearch graph , int v, int[] visited) {
         int next;
         System.out.println(v);
         visited[v] =1;
@@ -96,7 +96,7 @@ public class Graph {
     /*
      * 广度遍历
      */
-    public void BFS(Graph graph,int v,int[] visited) {
+    public void BFS(GraphFirstSearch graph, int v, int[] visited) {
         Queue<Integer> queue = new LinkedList<>();
         int next;
         queue.add(v);
@@ -127,7 +127,7 @@ public class Graph {
                 {INF,INF,1,1,INF}
         };
 
-        Graph graph = new Graph();
+        GraphFirstSearch graph = new GraphFirstSearch();
         graph.createGraph(graph, A, vs);
         graph.print_Graph(graph);
         int[] visited = new int[100];
