@@ -7,6 +7,7 @@ import com.abin.lee.dynamic.common.JsonUtil;
  * dynamic-planning
  * com.abin.lee.dynamic.plan.graph.dijkstra
  * https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html
+ * https://blog.csdn.net/heroacool/article/details/51014824
  */
 public class Dijkstra {
     public static int MAX = 10000;
