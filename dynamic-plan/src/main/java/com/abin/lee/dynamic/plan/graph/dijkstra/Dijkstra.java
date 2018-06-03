@@ -3,9 +3,8 @@ package com.abin.lee.dynamic.plan.graph.dijkstra;
 import com.abin.lee.dynamic.common.JsonUtil;
 
 /**
- * Created by abin on 2017/11/14 2017/11/14.
- * dynamic-planning
- * com.abin.lee.dynamic.plan.graph.dijkstra
+ * Created by abin on 2017/11/14 .
+ * 有向图最短路径问题
  * https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html
  * https://blog.csdn.net/heroacool/article/details/51014824
  */
